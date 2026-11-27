@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "templates": [
+    {
+      "id": "template-standard-dev",
+      "name": "多 Agent 串行协作开发",
+      "description": "依次串联 DeepSeek Harness、Codex、Claude Code 与 Qwen Code 完成需求实现与代码审阅。",
+      "steps": [
+        { "id": "tpl-step-1", "agentId": "deepseek-harness" },
+        { "id": "tpl-step-2", "agentId": "codex" },
+        { "id": "tpl-step-3", "agentId": "claude-code" },
+        { "id": "tpl-step-4", "agentId": "qwen-code" }
+      ]
+    },
+    {
+      "id": "template-implement-and-review",
+      "name": "实现与复核双 Agent 链",
+      "description": "由 Codex 完成实现后自动交接给 Claude Code 审阅与改进。",
+      "steps": [
+        { "id": "tpl-ir-1", "agentId": "codex" },
+        { "id": "tpl-ir-2", "agentId": "claude-code" }
+      ]
+    }
+  ]
+}

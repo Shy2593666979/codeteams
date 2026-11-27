@@ -1,0 +1,33 @@
+{
+  "name": "codeteams",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CodeTeams — Local-first, ACP-native AI Coding Agent collaboration desktop workbench",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "trustedDependencies": [
+    "electron",
+    "esbuild"
+  ],
+  "scripts": {
+    "dev": "bun run --cwd apps/desktop dev",
+    "dev:core": "bun run apps/core/src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test tests/unit tests/integration",
+    "test:e2e": "playwright test --config tests/playwright.config.ts",
+    "build:core": "bun run scripts/build-core.ts",
+    "build:desktop": "bun run --cwd apps/desktop build",
+    "build": "bun run build:core && bun run build:desktop",
+    "package": "bun run build:core && bun run --cwd apps/desktop package"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/bun": "^1.4.5",
+    "@types/node": "^24.0.0",
+    "playwright": "^1.65.1",
+    "typescript": "^7.0.2"
+  }
+}

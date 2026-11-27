@@ -1,0 +1,13 @@
+{
+  "name": "@codeteams/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@codeteams/acp": "workspace:*",
+    "@codeteams/engine": "workspace:*",
+    "@codeteams/shared": "workspace:*",
+    "@codeteams/storage": "workspace:*"
+  }
+}
